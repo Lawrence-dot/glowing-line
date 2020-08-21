@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="add.css">
+    <link rel="icon" type="image/jpg" href="images/OIP.jpg">
+    <title> To Do List </title>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+            <!--  side-bar -->
+                    <div id="sidebar"> 
+                           <h2 class="side-header"> My To Do List </h2>
+                            <div class="img-body">
+                               <img src="images/avatar.png" class="side-img">
+                            </div>
+                         
+                           <nav>
+                               <ul class="side-nav">
+                              <li><a href="#"><i class="fa fa-home"></i> Home </a></li>
+                              <li><a href="#"><i class="fa fa-calendar"></i> My Calendar </a></li>
+                              <li class="dropdown">
+                                <a class="dropdown-toggle side-lnk" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">&#127939; My Daily Planner</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                              </li>
+                              <li class="dropdown">
+                                <a class="dropdown-toggle side-lnk" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list"></i>  My Schedule List</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                              </li>
+                              <li class="dropdown">
+                                <a class="dropdown-toggle side-lnk" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-circle"></i> Reminders</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                              </li>
+                              <li class="botttom-setting"><a href="#"> &#9881; </a></li>
+                              </ul>
+                            </nav>
+                      </div> 
+            <!-- Page Content -->
+                <div class="the-page">
+                      <div class="row blue-top">
+                        <div class="col-md-1 col-sm-1 img-container">
+                            <img src="images/logo.png" height="20px">
+                            <li class="hide-user">
+                              <a href="#"><i class="fa fa-user"></i></a>
+                                <ul class="hidden-links">
+                                  <a href="#">Log-out</a>
+                                  <a href="#">Change Passcode</a>
+                                </ul>
+                              </li>
+                          </div>
+
+                          <div class="col-md-8 col-sm-8">
+                              <div class="quick search">
+                                <form class="quick-form">
+                                  <input type="search" id="quick-search" placeholder="Quick Search">
+                                  <label for="quick-search">
+                                    <li>
+                                      <a href="#"> &#x1F50D; </a>
+                                    </li>
+                                  </label>
+                                </form>
+                        </div>
+                       </div>
+                      
+                       <div class="col-md-3 links">
+                        <ul class="end-links">
+                            <li><a href="#"> &#43; </a></li>
+                            <li><a href="#"> <i class="fa fa-bell"></i> </a></li>
+                            <li>
+                              <a href="#"><i class="fa fa-user"></i></a>
+                                <ul class="hidden-links">
+                                  <a href="#">Log-out</a>
+                                  <a href="#">Change Passcode</a>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                       <div class="page-content" id="main-page"> 
+                        <div class="row secondary-nav" >
+                          <div class="col-md-3">
+                            <div id ="side-btn"> 
+                              <div class="toggle-btn">
+                                  <li class="btn toggle-navi" id="open"> .&#9776; </li>
+                              </div>
+                            </div>
+      
+                            <div id="side-btn">
+                              <li class="btn t
+                              oggle-navi" id="close"> &times;. </li>
+                            </div>
+                          </div>
+                          
+                            <div class="col-md-9">
+                              <div class="top-bar">
+                                <h3> My To Do List</h3>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col Todo-sec">
+                              <div class="container mylist">
+                                <div class="header">
+                                  <h4> My To Do </h4>
+                                  <div class="row">
+                                    <div class="col">
+               
+                                   <div>
+                                      <p id="date"></p>         
+                                   </div> 
+                                    </div>
+                                  </div>
+                                </div>
+                                 
+
+                                <div class="row">
+                                  <div class="col-sm-12 table-col">
+                                    <table class="Data-table" id="dataTable">
+                                    <th>
+                                      <tr class="rows">
+                                        <td class="cols"> S/N </td>
+                                        <td class="cols"> Date & Time </td>
+                                        <td class="cols"> Activity </td>
+                                        <td class="cols"> 
+                                          <select class="form-control form-control-md">
+                                            <option>Pending</option>
+                                            <option>Completed</option>
+                                           </select> 
+                                         </td>
+                                        <td class="cols">  Edit </td>
+                                        <td class="cols"> Delete  </button> </td>
+                                      </tr>
+                                    </th>
+                                    </table>
+                                  </div>
+                                </div>
+
+                                      <form class="main-form">
+                                            <input type="text" name="Activity" id="Activity-name" placeholder="Activity Name">
+                                            <input  type="datetime-local" name="Date and Time" id="dateT" value="">
+                                            <select id="selectV">
+                                              <option value="Pending">Pending</option>
+                                              <option value="Completed">Completed</option>
+                                           </select>
+                                          <button class="addIt-btn" id="add-btns" type="button" onclick="addToDo()">
+                                          &#43;
+                                          </button>
+                                    
+                                        </form>
+                                      
+
+
+
+                             </div>
+                            </div>
+                          </div>
+
+      
+                          <div class="footer">
+                            <footer>
+                              <div class="row footer-row">
+                                <div class="col">
+                                  <div class="row">
+                                    <div class="col">
+                                      <marquee> Make sure you register to get the very best of our services, You surely wont regret it </marquee>
+                                    </div>
+                                  </div>
+                                
+                                  <div class="row">
+                                    <div class="col index">
+                                      <p class="index-p"> Security | Privacy | Terms & Conditions  &#169;Mylist </p>
+                                    </div>
+                                  </div>
+                                  
+                                <div class="row">
+                                  <div class="col social-links">
+                                    <i class="fa fa-facebook"></i>
+                                    <i class="fa fa-instagram"></i>
+                                    <i class="fa fa-twitter"></i>
+                                    <i class="fa fa-whatsapp"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            </footer>
+                          </div>
+
+                        </div>
+               </div>
+    </div>
+ 
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+
+for(i=0; i<LIST.length; i++){
+  let selectCol = document.getElementById("select");
+  let selected = selectCol.selectedOption;
+  let statusText = document.getElementById("statusT");
+  statusText.innerText = selected.innerText;
+  console.log(selected);
+}
