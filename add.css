@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+ul {
+    display: inline-block;
+}
+
+#list li {
+    margin-left: 5%;
+    list-style: unset;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+ul.hidden-links {
+    display: none;
+}
+
+img.side-img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 10px;
+    margin-left: 30%;
+    background-color: gray;
+    transition: all .5s ease;
+}
+
+.img-body {
+    background-color: gray;
+}
+
+.show {
+    left: 0px;
+}
+
+li#open {
+    display: block;
+    margin-left: 0px;
+}
+
+#close {
+    display: none;
+    position: absolute;
+    left: 300px;
+}
+
+.close {
+    display: none;
+}
+
+h2.side-header {
+    text-align: center;
+    font-family: cursive;
+}
+
+#sidebar {
+    z-index: 1;
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    background-color: rgba(45, 62, 134, 0.705);
+    transition: all .5s ease;
+    overflow-y: hidden;
+    opacity: 0.7;
+}
+
+.page-content {
+    width: 100%;
+    position: absolute;
+}
+
+
+#sidebar ul li {
+    padding: 5px;
+    margin-left: 5px;
+}
+
+
+#sidebar ul li:hover {
+    background-color: rgba(45, 62, 134, 0.705);
+    border-left: 2px solid red;
+    padding-left: 10px;
+    transition: all 1s ease;
+}
+
+#sidebar ul li a:hover {
+    padding-left: 10px;
+    transition: all 1s ease;
+    text-decoration: none;
+}
+
+#sidebar ul li a {
+    color: rgba(0, 0, 0, 0.589);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#side-btn  {
+    position: fixed;
+    left: 0px;
+}
+
+
+#sidebar ul li a span:hover {
+    position: absolute;
+    transform: translateY(-10%) rotate(-180deg);
+    transition: transform 0.4s;
+} 
+
+
+.sidebar-wrapper ul li {
+    padding: 10px 10px;
+}
+
+
+ul.sidebar-nav {
+    padding: 0;
+    margin-left: 3px;
+    padding: 5px;
+}
+
+a.nav-link {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.top-icons {
+    margin-left: 30px;
+}
+
+.page-main {
+    padding-left: 300px;
+}
+
+.show {
+    display: block;
+}
+
+nav ul .under-list {
+    display: none;
+}
+
+a.side-lnk {
+    padding: 0%;
+}
+
+li.toggle-navi {
+    height: 30px;
+}
+
+.blue-top {
+    background-color: rgb(62, 62, 175);
+    width: 100%;
+    height: 25px;
+    margin: 0;
+    padding: 0px;
+}
+
+
+.quick-search {
+    height: 20px;
+}
+
+input#quick-search {
+    border: 0;
+    background-color: transparent;
+    margin-left: 45%;
+} 
+
+form.quick-search {
+    background-color: blue;
+}
+
+.topend-links ul.end-links {
+    display: inline;
+}
+
+ul.end-links {
+    margin-left: 70%;
+}
+
+ul.end-links li {
+    display: inline-block;
+    padding: 0px;
+}
+
+.links {
+    padding: 0;
+}
+
+.hide-user {
+    display: none;
+}
+
+.secondary-nav {
+    background-image: linear-gradient(to right,rgb(155, 85, 85), rgb(89, 89, 161));
+}
+
+.secondary-nav h3 {
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Todo-sec {
+    margin-top: 5px;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    
+}
+
+img.Todo-img {
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.mylist {
+    padding: 0%;
+    margin: 0%;
+    border: 1px solid;
+}
+
+
+.footer-row {
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 5px;
+    margin-bottom: 0;
+}
+
+marquee {
+    color: white;
+}
+
+.social-links {
+    margin-left: 50%;
+}
+
+.index p {
+    margin-left: 30%;
+}
+
+.header {
+    background-image: url("images/downlooad.jpg");
+    background-size: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+}
+
+.header h4 {
+    color: white;
+    font-weight: 900;
+} 
+
+#date {
+    color: white;
+    margin-top: 130px;
+}
+
+table.Data-table {
+    margin-top: 5px;
+    border: 1px solid black;
+}
+
+form.main-form {
+    margin-top: 30px;
+}
+
+
+.table-col {
+    width: 100%;
+}
+
+table.Data-table {
+    width: 100%;
+}
+
+.update-btn {
+    display: none;
+} 
+
+.cols {
+    border: 1px solid;
+}
+
+.status-control {
+    width: 20%;
+    padding: 0px;
+    display: inline;
+}
+
+button.addIt-btn {
+    width: 30px;
+    border-radius: 30px;
+}
+
+.hide {
+    display: none;
+}
+
+#dateT {
+    display: inline;
+}
+
+input {
+    margin: 0;
+    width: 40%;
+}
+
+#statusT {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.delete-btn {
+    width: 30px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+}
+
+.update-btn {
+    background-color: green;
+}
+
+#edit-btn {
+    width: 30px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+@media screen and (max-width: 780px){
+    #sidebar {
+        position: fixed;
+        width: 0px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.39);
+    }
+
+    input {
+        margin: 0;
+        width: 30%;
+    }
+
+    #close {
+        display: none;
+        position: relative;
+        left: 300px;
+    }
+
+    .blue-top {
+        background-color: rgb(62, 62, 175);
+        height: 25px;
+    }
+    
+    form.quick-form {
+        display: none;
+    }
+
+    .topend-links ul.end-links {
+        display: inline;
+    }
+
+    ul.end-links li {
+        display: none;
+    }
+
+    .secondary-nav h3 {
+        margin-left: 50px;
+        font-weight: 600;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+    }
+    
+    .second-sec img {
+        margin-left: 40%;
+        height: 200px;
+    }
+    
+    .fourth-row img {
+        height: 290px;
+        width: 60%;
+        margin-left: 20%;
+        transition: all .5s ease;
+    }
+
+    .secondary-nav h3 {
+        margin-left: 20%;
+        font-weight: 600;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .sixth-sec img {
+        height: 300px;
+        width: 360px;
+    }
+
+    .frames-col {
+        margin-left: 20%;
+    }
+
+    .index p {
+        margin-left: 20%;
+    }
+
+    #date {
+        margin-top: 30%;
+        color: white;
+    }
+    
+    .Todo-sec {
+        margin-top: 5px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 30px;
+        
+    }
+ 
+}
+
+@media screen and (max-width: 575px){
+    .hide-user {
+        margin-left: 90%;
+        display: inline-block;
+    }
+}
