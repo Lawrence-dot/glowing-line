@@ -367,8 +367,13 @@ input {
 
     input {
         margin: 0;
-        width: 30%;
+        width: 27%;
     }
+    
+    button.addIt-btn {
+    width: 30px;
+    border-radius: 30px;
+   }
 
     #close {
         display: none;
