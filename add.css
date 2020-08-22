@@ -449,13 +449,12 @@ input {
         margin-top: 5px;
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 30px;
-        
+        margin-bottom: 30px;  
     }
  
 }
 
-@media screen and (max-width: 575px){
+@media screen and (max-width: 157px){
     .hide-user {
         margin-left: 90%;
         display: inline-block;
@@ -464,5 +463,10 @@ input {
     #selectV {
      width: 20%;
     }
-    
+
+    input {
+        margin: 0;
+        width: 25%;
+    }
 }
+
