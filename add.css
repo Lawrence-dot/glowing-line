@@ -417,6 +417,10 @@ input {
         font-weight: 600;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
+    
+     #selectV {
+        width: 10%;
+    }
 
     .sixth-sec img {
         height: 300px;
