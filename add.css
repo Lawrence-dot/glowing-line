@@ -367,7 +367,7 @@ input {
 
     input {
         margin: 0;
-        width: 20%;
+        width: 25%;
     }
 
     #close {
@@ -457,7 +457,7 @@ input {
     }
     
     #selectV {
-     width: 10%;
+     width: 20%;
     }
     
 }
