@@ -48,18 +48,22 @@ var id;
 
 var savedList = localStorage.getItem("LIST");
 
-if (savedList) {
+// if (savedList) {
+//     LIST = JSON.parse(savedList);
+//      id = 1;
+//     loadList(LIST);
+
+// } else {
+//     LIST = [];
+//     id = 0;
+// }
+
+for (let i = 0; i < localStorage.length; i++) {
+    const element = localStorage[i];
     LIST = JSON.parse(savedList);
      id = 1;
     loadList(LIST);
-
-} else {
-    LIST = [];
-    id = 0;
-}
-
-
-
+};
 
 function loadList(array) {
     array.forEach(element => {
