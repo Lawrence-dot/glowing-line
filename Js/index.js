@@ -53,7 +53,7 @@ var savedList = localStorage.getItem("LIST");
 
 
 if (savedList) {
-    // LIST = JSON.parse(savedList);
+    LIST = JSON.parse(savedList);
     loadList(LIST);
     ReList();
     newFunction();
