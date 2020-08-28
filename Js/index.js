@@ -56,7 +56,6 @@ if (savedList) {
     LIST = JSON.parse(savedList);
     loadList(LIST);
     ReList();
-    newFunction();
     console.log(LIST);
  } else {
     LIST = [];
@@ -72,11 +71,11 @@ if (savedList) {
 //     });
 // };
 
-for (let i = 0; i < localStorage.length; i++) {
-    const element = localStorage[i];
-    LIST = JSON.parse(savedList);
-    loadList(LIST);
-};
+// for (let i = 0; i < localStorage.length; i++) {
+//     const element = localStorage[i];
+//     LIST = JSON.parse(savedList);
+//     loadList(LIST);
+// };
 
 function loadList(array) {
     array.forEach(element => {
@@ -118,7 +117,6 @@ function addToDo (inputted, id){
         neww = document.createElement("tr");
         neww.innerHTML = newros;
         table.appendChild(neww);
-
         localStorage.setItem("LIST", JSON.stringify(LIST));
  };
 
