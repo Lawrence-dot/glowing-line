@@ -45,35 +45,47 @@ function time() {
 
 var LIST;
 var id;
+var numbers;
+var UpdateIt;
+var theNumbers;
 
 var savedList = localStorage.getItem("LIST");
 
-// if (savedList) {
-//     LIST = JSON.parse(savedList);
-//      id = 1;
-//     loadList(LIST);
 
-// } else {
-//     LIST = [];
-//     id = 0;
-// }
+if (savedList) {
+    // LIST = JSON.parse(savedList);
+    loadList(LIST);
+    ReList();
+    newFunction();
+    console.log(LIST);
+ } else {
+    LIST = [];
+    id = 0;
+ }
+
+
+// function newFunction() {
+//     LIST.forEach(element => {
+//         let serialL = element.value;
+//         id = 1;
+//         console.log(serialL.innerText);
+//     });
+// };
 
 for (let i = 0; i < localStorage.length; i++) {
     const element = localStorage[i];
     LIST = JSON.parse(savedList);
-     id = 1;
     loadList(LIST);
 };
 
 function loadList(array) {
     array.forEach(element => {
-        addToDo(element.name, element.status, element.serialNumber);
-    })
+        addToDo(element.name, element.id, element.value);
+    });
+    
 };
 
-
-
-function addToDo (inputted){
+function addToDo (inputted, id){
     let activity = document.getElementById("Activity-name");
     let table = document.getElementById("dataTable");
     let displayD = displayDate.toDateString();
@@ -86,6 +98,7 @@ function addToDo (inputted){
     let rows = document.getElementsByClassName("row");
     var addBtn = document.getElementById("add-btns");
     let selectCol = document.getElementById("selectV");
+    let numbering = document.getElementById("colserial");
     let selectedOption = selectCol.value;
 
     let newros = `<tr class="row nrow" id="row${id}">
@@ -102,36 +115,45 @@ function addToDo (inputted){
         activity.value = "";
         id++;
     
-        let neww = document.createElement("tr");
+        neww = document.createElement("tr");
         neww.innerHTML = newros;
         table.appendChild(neww);
 
+        localStorage.setItem("LIST", JSON.stringify(LIST));
  };
+
+ 
 
 addButton.addEventListener("click", function (addNew) {
     let activity = document.getElementById("Activity-name");
     let inputted = activity.value;
-   
-    // for (let i = 0; i < savedList.length; i++) {
-    //     const element = savedList[i];
-    //     console.log(element);
-    // };
+    let numbering = document.getElementById("colserial");
+    // newFunction();
     
     if (inputted) {
         addToDo(inputted);
-       
-     
         LIST.push({
             name: inputted,
-            serialNumber: id,
+            serialNuber: id,
+            value: neww.childNodes[1]
         });
         id++;
+        localStorage.setItem("LIST", JSON.stringify(LIST));
+        ReList();
     }
+
     localStorage.setItem("LIST", JSON.stringify(LIST));
-    location.reload();
  });
 
 
+function ReList() {
+    LIST.forEach(element => {
+        console.log(element);
+        let serialL = element.value;
+        id = LIST.indexOf(element) + 1;
+        serialL.innerText = LIST.indexOf(element) + 1;;
+    });
+};
 
 function Deletetodo(element) {
     let child = event.target;
@@ -139,16 +161,18 @@ function Deletetodo(element) {
     let table = document.getElementById("dataTable");
     let serialC = document.getElementsByClassName("colserial");
     table.removeChild(child.parentNode.parentNode);
-   
+    let serialUpdate = child.parentNode.parentNode.children[0];
+
     LIST.forEach(col => {
         LIST.splice(col, 1);
         console.log(col);
-        location.reload();
+        id++;
     });
-    localStorage.setItem("LIST", JSON.stringify(LIST));
+    ReList();
 };
 
-// localStorage.setItem("List", JSON.stringify(LIST));
+
+
 
 function Editactivity(element) {
     let child = event.target;
@@ -160,7 +184,6 @@ function Editactivity(element) {
     updateElement.style.display = "block";
     let theAct = child.parentNode.parentNode.children[2];
     activity.value = theAct.innerText;
-
 };
 
 function updateTodo (){
@@ -183,8 +206,8 @@ function updateTodo (){
         let selectedOption = selectCol.value;
         let editStatus = col.childNodes[7];
         editStatus.innerText = selectedOption;
-        
     });
 };
 
 //localStorage.clear();
+
