@@ -43,24 +43,24 @@ function time() {
 };
 
 
-var LIST;
-var id;
-var numbers;
-var UpdateIt;
-var theNumbers;
+var LIST = [];
+var id = 1;
+ReList();
+
+function ReList() {
+    for (let i = 0; i < LIST.length; i++) {
+        const element = LIST[i];
+        LIST[0].innerHTML = id;
+        // id = LIST.indexOf(element);
+        console.log();
+    };
+
+};
 
 var savedList = localStorage.getItem("LIST");
 
 
-if (savedList) {
-    LIST = JSON.parse(savedList);
-    loadList(LIST);
-    ReList();
-    console.log(LIST);
- } else {
-    LIST = [];
-    id = 0;
- }
+//
 
 
 // function newFunction() {
@@ -84,25 +84,18 @@ function loadList(array) {
     
 };
 
-function addToDo (inputted, id){
-    let activity = document.getElementById("Activity-name");
+function addToDo (inputted){
     let table = document.getElementById("dataTable");
-    let displayD = displayDate.toDateString();
-    let displayT = displayDate.toLocaleTimeString();
-    let displayh = displayDate.getHours();
-    let displaym = displayDate.getMinutes();
-    let displayDT = `${displayD} ${displayT}`;
     let statusP = document.getElementById("statusT");
-    dateT.value = displayDT;
-    let rows = document.getElementsByClassName("row");
-    var addBtn = document.getElementById("add-btns");
     let selectCol = document.getElementById("selectV");
-    let numbering = document.getElementById("colserial");
     let selectedOption = selectCol.value;
-
+    let dateInput = document.getElementById("dateT");
+    let activity = document.getElementById("Activity-name");
+    let dateValue = dateInput.value;
+    let timeValue = document.getElementById("dateTime").value;
     let newros = `<tr class="row nrow" id="row${id}">
-                            <td class="colserial" id="Text${id}"> ${id} </td>
-                            <td class="cols"> ${displayDT} </td>
+                            <td class="colserial"> ${id} </td>
+                            <td class="cols"> ${dateValue} ${timeValue} </td>
                             <td class="cols"> ${inputted} </td>
                             <td class="cols"> 
                              <p id= "statusT">  ${selectedOption}  </p>
@@ -112,8 +105,6 @@ function addToDo (inputted, id){
                             <td class="cols"> <button onclick="updateTodo()" class="update-btn"> Update </button> </td>
                           </tr>`;
         activity.value = "";
-        id++;
-    
         neww = document.createElement("tr");
         neww.innerHTML = newros;
         table.appendChild(neww);
@@ -122,51 +113,35 @@ function addToDo (inputted, id){
 
  
 
-addButton.addEventListener("click", function (addNew) {
+addButton.addEventListener("click", function addNew() {
     let activity = document.getElementById("Activity-name");
     let inputted = activity.value;
-    let numbering = document.getElementById("colserial");
-    // newFunction();
+    let dateInput = document.getElementById("dateT");
+    let dateValue = dateInput.value;
+    let timeValue = document.getElementById("dateTime").value;
     
-    if (inputted) {
+    if (inputted && dateValue && timeValue) {
         addToDo(inputted);
         LIST.push({
             name: inputted,
-            serialNuber: id,
-            value: neww.childNodes[1]
+            serialNuber: id, 
         });
         id++;
-        localStorage.setItem("LIST", JSON.stringify(LIST));
-        ReList();
-    }
-
-    localStorage.setItem("LIST", JSON.stringify(LIST));
+    };
+    ReList();
+    // localStorage.setItem("LIST", JSON.stringify(LIST));
  });
 
 
-function ReList() {
-    LIST.forEach(element => {
-        console.log(element);
-        let serialL = element.value;
-        id = LIST.indexOf(element) + 1;
-        serialL.innerText = LIST.indexOf(element) + 1;;
-    });
-};
-
-function Deletetodo(element) {
+function Deletetodo() {
     let child = event.target;
-    let rows = document.getElementsByClassName("row");
     let table = document.getElementById("dataTable");
-    let serialC = document.getElementsByClassName("colserial");
-    table.removeChild(child.parentNode.parentNode);
-    let serialUpdate = child.parentNode.parentNode.children[0];
-
     LIST.forEach(col => {
         LIST.splice(col, 1);
-        console.log(col);
-        id++;
     });
-    ReList();
+
+    table.removeChild(child.parentNode.parentNode);
+   // ReList();
 };
 
 
@@ -202,7 +177,6 @@ function updateTodo (){
     LIST.forEach( (col) =>{
         let selectCol = document.getElementById("selectV");
         let selectedOption = selectCol.value;
-        let editStatus = col.childNodes[7];
         editStatus.innerText = selectedOption;
     });
 };
