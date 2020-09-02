@@ -236,6 +236,10 @@ ul.end-links li {
     
 }
 
+#dateTime {
+    width: 80px;
+}
+
 img.Todo-img {
     width: 100%;
     padding: 0%;
@@ -468,5 +472,6 @@ input {
         margin: 0;
         width: 25%;
     }
+    
+    
 }
-
