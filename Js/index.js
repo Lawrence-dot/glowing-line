@@ -71,7 +71,7 @@ function getList() {
         loadList(LIST); 
     } else {
         LIST = [];
-        id = 0;
+        id = 1;
     }
 };
 
