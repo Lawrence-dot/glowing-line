@@ -43,48 +43,54 @@ function time() {
 };
 
 
-var LIST = [];
-var id = 1;
-ReList();
+var LIST;
+var id;
 
-function ReList() {
-    for (let i = 0; i < LIST.length; i++) {
-        const element = LIST[i];
-        LIST[0].innerHTML = id;
-        // id = LIST.indexOf(element);
-        console.log();
-    };
 
+// function ReList() {
+//     for (let i = 0; i < LIST.length; i++) {
+//         const element = LIST[i];
+//         id = LIST.indexOf(element) + 2;
+//         console.log(id);
+//     };
+
+// };
+
+
+getList();
+
+function setList() {
+    localStorage.setItem("LIST", JSON.stringify(LIST));
 };
 
-var savedList = localStorage.getItem("LIST");
+function getList() {
+    var savedList = localStorage.getItem("LIST");
+    if (savedList) {
+        LIST = JSON.parse(savedList);
+         id = 1;
+        loadList(LIST); 
+    } else {
+        LIST = [];
+        id = 0;
+    }
+};
 
 
-//
-
-
-// function newFunction() {
-//     LIST.forEach(element => {
-//         let serialL = element.value;
-//         id = 1;
-//         console.log(serialL.innerText);
-//     });
-// };
-
-// for (let i = 0; i < localStorage.length; i++) {
-//     const element = localStorage[i];
-//     LIST = JSON.parse(savedList);
-//     loadList(LIST);
-// };
+function reNumber(array) {
+    array.forEach(element => {
+     //   id = array.indexOf(element);
+       console.log(element);
+   });
+};
 
 function loadList(array) {
     array.forEach(element => {
-        addToDo(element.name, element.id, element.value);
+        addToDo(element.name, element.date, element.serialNuber);
+        console.log(element);
     });
-    
 };
 
-function addToDo (inputted){
+function addToDo (inputted, dateaTime){
     let table = document.getElementById("dataTable");
     let statusP = document.getElementById("statusT");
     let selectCol = document.getElementById("selectV");
@@ -93,9 +99,10 @@ function addToDo (inputted){
     let activity = document.getElementById("Activity-name");
     let dateValue = dateInput.value;
     let timeValue = document.getElementById("dateTime").value;
+
     let newros = `<tr class="row nrow" id="row${id}">
                             <td class="colserial"> ${id} </td>
-                            <td class="cols"> ${dateValue} ${timeValue} </td>
+                            <td class="cols"> ${dateaTime} </td>
                             <td class="cols"> ${inputted} </td>
                             <td class="cols"> 
                              <p id= "statusT">  ${selectedOption}  </p>
@@ -108,7 +115,7 @@ function addToDo (inputted){
         neww = document.createElement("tr");
         neww.innerHTML = newros;
         table.appendChild(neww);
-        localStorage.setItem("LIST", JSON.stringify(LIST));
+        id++;
  };
 
  
@@ -119,31 +126,47 @@ addButton.addEventListener("click", function addNew() {
     let dateInput = document.getElementById("dateT");
     let dateValue = dateInput.value;
     let timeValue = document.getElementById("dateTime").value;
+    dateaTime = `${dateValue} ${timeValue}`;
     
     if (inputted && dateValue && timeValue) {
-        addToDo(inputted);
+        addToDo(inputted, dateaTime);
         LIST.push({
-            name: inputted,
             serialNuber: id, 
+            date: dateaTime,
+            name: inputted
         });
-        id++;
+
+        
+    //    reNumber(LIST);
     };
-    ReList();
-    // localStorage.setItem("LIST", JSON.stringify(LIST));
+    setList();
  });
 
 
 function Deletetodo() {
     let child = event.target;
+    let rows = document.getElementsByClassName("colserial");
     let table = document.getElementById("dataTable");
-    LIST.forEach(col => {
-        LIST.splice(col, 1);
-    });
 
+    LIST.splice(child.parentNode.parentNode, 1);
     table.removeChild(child.parentNode.parentNode);
+   
+    LIST.forEach(col => {
+     //    LIST.splice(col, 1);
+         console.log(col);
+        id = 1;
+     });
+   
+    for (let i = 0; i < rows.length; i++) {
+        const element = rows[i];
+        element.innerText = id;
+        id++;
+        console.log(element);
+    };
+    
+    setList();
    // ReList();
 };
-
 
 
 
