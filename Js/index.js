@@ -53,8 +53,9 @@ function setList() {
     localStorage.setItem("LIST", JSON.stringify(LIST));
 };
 
- var savedList = localStorage.getItem("LIST");
-function getList() {
+
+function getList() { var savedList = localStorage.getItem("LIST");
+     var savedList = localStorage.getItem("LIST");
     if (savedList) {
         LIST = JSON.parse(savedList);
          id = 1;
