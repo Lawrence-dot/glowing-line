@@ -47,16 +47,6 @@ var LIST;
 var id;
 
 
-// function ReList() {
-//     for (let i = 0; i < LIST.length; i++) {
-//         const element = LIST[i];
-//         id = LIST.indexOf(element) + 2;
-//         console.log(id);
-//     };
-
-// };
-
-
 getList();
 
 function setList() {
