@@ -232,8 +232,6 @@ ul.end-links li {
 .Todo-sec {
     margin-top: 5px;
     margin-left: 10%;
-    margin-bottom: 30px;
-    
 }
 
 #dateTime {
@@ -274,7 +272,7 @@ marquee {
 .header {
     background-image: url("Images/downlooad.jpg");
     background-size: 100%;
-    height: 200px;
+    height: 100%;
     background-repeat: no-repeat;
 }
 
@@ -283,28 +281,19 @@ marquee {
     font-weight: 900;
 } 
 
-#date {
+p#date {
     color: white;
-    margin-top: 130px;
+    margin-top: 220px;
+    font-size: 20px;
 }
 
-table.Data-table {
-    margin-top: 5px;
-    border: 1px solid black;
-}
 
 form.main-form {
-    margin-top: 30px;
+    margin-top: 10%;
+    padding: 2px 2px;
+    background-color: rgba(0, 0, 0, 0.26);
 }
 
-
-.table-col {
-    width: 100%;
-}
-
-table.Data-table {
-    width: 100%;
-}
 
 .update-btn {
     display: none;
@@ -312,7 +301,16 @@ table.Data-table {
 
 .cols {
     border: 1px solid;
+
+    font-family: 'Times New Roman', Times, serif;
 }
+
+.colserial {
+    margin-top: 2px;
+    border: 1px solid;
+}
+
+
 
 .status-control {
     width: 20%;
@@ -322,7 +320,15 @@ table.Data-table {
 
 button.addIt-btn {
     width: 5%;
-    border-radius: 30px;
+    border-radius: 90px;
+    background-color: rgb(190, 65, 65);
+    box-shadow:  1px -2px 1px 0px rgba(0, 0, 0, 0.37);
+}
+
+button.addIt-btn:hover {
+    transition: all .5s ease;
+    background-color: rgba(44, 179, 44, 0.747);
+    box-shadow:  1px -2px 1px 0px rgba(0, 0, 0, 0.37);
 }
 
 .hide {
@@ -335,11 +341,11 @@ button.addIt-btn {
 
 input {
     margin: 0;
-    width: 30%;
+    width: 25%;
 }
 
 #statusT {
-    margin-left: 15px;
+    margin-left: 1px;
     margin-top: 10px;
 }
 
@@ -357,9 +363,76 @@ input {
 
 #edit-btn {
     width: 30px;
+    margin-left: 1%;
     border-radius: 5px;
     background-color: green;
 }
+
+#completed {
+    text-decoration: line-through;
+}
+
+
+table#dataTable {
+    background-color: rgba(131, 126, 126, 0.082);
+    width: 100%;
+    border-left: 1px solid black;
+    border-collapse: unset;
+    border-style: groove;
+}
+
+
+
+.table-header {
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));
+}
+
+td.cols-head {
+    padding-right: 3.5px;
+    border-right: 1px solid black;
+}
+
+
+#row {
+    margin-bottom: 10px white;
+}
+
+.Todo-sec {
+    height: 700px;
+}
+
+.clr-btn {
+        margin-left: 92%;
+        background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));    
+        cursor: pointer;
+        font-size: 15px;
+        text-align: center;
+        height: 34px;
+        width: 40px;
+        border-radius: 50px;
+        margin-bottom: 1px;
+}
+
+.clr-btn:hover {
+    transform: rotate(180deg);
+}
+
+.clr-col {
+    background-color: rgba(126, 124, 134, 0.712);
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.26);
+}
+
+tr {
+    border-left: 2px solid green;
+    /* background-color: chartreuse; */
+}
+
 
 @media screen and (max-width: 780px){
     #sidebar {
@@ -369,14 +442,34 @@ input {
         background-color: rgba(0, 0, 0, 0.39);
     }
 
+    .header {
+        background-image: url("Images/downlooad.jpg");
+        background-size: 900px;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .clr-btn {
+        margin-left: 92%;
+        background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));    
+        cursor: pointer;
+        font-size: 15px;
+        text-align: center;
+        height: 34px;
+        width: 40px;
+        border-radius: 50px;
+        margin-bottom: 1px;
+    }
+
     input {
         margin: 0;
-        width: 27%;
+        width: 23%;
+        border-style: ridge;
     }
     
     button.addIt-btn {
-    width: 5%;
-    border-radius: 30px;
+        width: 5%;
+        border-radius: 30px;
    }
 
     #close {
@@ -453,12 +546,13 @@ input {
         margin-top: 5px;
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 30px;  
+        height: 700px;
+        
     }
- 
+
 }
 
-@media screen and (max-width: 157px){
+@media screen and (max-width: 590px){
     .hide-user {
         margin-left: 90%;
         display: inline-block;
@@ -466,12 +560,24 @@ input {
     
     #selectV {
      width: 20%;
+     height: 24px;
     }
 
     input {
         margin: 0;
-        width: 25%;
+        width: 24%;
+        height: 24px;
     }
-    
-    
-}
+
+    .clr-btn {
+            margin-left: 90%;
+            background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));    
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+            height: 34px;
+            width: 40px;
+            border-radius: 50px;
+            margin-bottom: 1px;
+    }
+};
