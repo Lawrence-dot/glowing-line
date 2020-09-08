@@ -136,28 +136,35 @@
                                 </div>
                                  
 
-                                <div class="row">
+                                <div class="row clr-row">
+                                  <div class="col clr-col">
+                                    <li class="clr-btn"  onclick="clearAll()"> &#128472; </li>
+                                  </div>
+                                </div>
+                              
+                               
+                               <div class="row tables-row">
                                   <div class="col-sm-12 table-col">
                                     <table class="Data-table" id="dataTable">
                                     <th>
-                                      <tr class="rows">
-                                        <td class="cols"> S/N </td>
-                                        <td class="cols"> Date & Time </td>
-                                        <td class="cols"> Activity </td>
-                                        <td class="cols"> 
+                                      <tr class="table-header tables-rows">
+                                        <td class="cols-head"> S/N </td>
+                                        <td class="cols-head"> Date & Time </td>
+                                        <td class="cols-head"> Activities </td>
+                                        <td class="cols-head"> 
                                           Status
                                          </td>
-                                        <td class="cols">  Edit </td>
-                                        <td class="cols"> Delete  </button> </td>
+                                        <td class="cols-head">  Edit </td>
+                                        <td class="cols-head"> Delete  </button> </td>
                                       </tr>
                                     </th>
                                     </table>
                                   </div>
                                 </div>
-                                
+
                                   <form class="main-form">
-                                    <input type="text" name="Activity" id="Activity-name" placeholder="Activity Name">
-                                    <input type="date" name="Date and Time" id="dateT" value="">
+                                    <input type="text" name="Activities" id="Activity-name" placeholder="Activity Name">
+                                    <input type="date" name="Date and Time" id="dateT">
                                     <input type="time" name="" id="dateTime">
                                     <select id="selectV">
                                         <option value="Pending">Pending</option>
