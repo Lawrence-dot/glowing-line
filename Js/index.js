@@ -12,7 +12,7 @@ open.onclick = function () {
     document.getElementById("open").setAttribute("id", "close");
     close.style.display = "block";
     open.style.display = "none";
-    page.style.paddingLeft = "312px";
+    page.style.paddingLeft = "319px";
 };
 
 close.onclick = function () {
@@ -32,6 +32,7 @@ var dateT = document.getElementById("dateT");
 var time = setInterval(time, 1000);
 var displayDate = new Date();
 var serialN = 1;
+var mainInput = document.getElementById("main-input");
 
 
 function time() {
@@ -70,6 +71,7 @@ function loadList(array) {
     });
 };
 
+
 function addToDo (inputted, dateaTime){
     let table = document.getElementById("dataTable");
     let statusP = document.getElementById("statusT");
@@ -81,16 +83,16 @@ function addToDo (inputted, dateaTime){
     let timeValue = document.getElementById("dateTime").value;
 
     let newros = `<tr class="text-rows rows table-rows" id="row">
-                            <td class="colserial"> ${id}. </td>
-                            <td class="cols"> ${dateaTime} </td>
-                            <td class="cols"> ${inputted} </td>
-                            <td class="cols"> 
-                             <p id= "statusT">  ${selectedOption}  </p>
+                            <td class="cols colserial"> ${id}. </td>
+                            <td class="cols column col-date"> ${dateaTime} </td>
+                            <td class="cols column col-activity"> ${inputted} </td>
+                            <td class="cols column col-status"> 
+                              ${selectedOption}
                              </td>
-                            <td class="cols"> <button onclick ="Editactivity()" id="edit-btn"> &#9998; </button>
+                            <td class="cols column col-edit"> <button onclick ="Editactivity()" id="edit-btn"> &#9998; </button>
                             <button onclick="updateTodo()" class="update-btn"> Update </button>
                             </td>
-                            <td class="cols"> <button class="delete-btn" onclick = "Deletetodo()">  &#128465; </button> </td>
+                            <td class="cols columnL"> <button class="delete-btn" onclick = "Deletetodo()">  &#128465; </button> </td>
                           </tr>`;
         activity.value = "";
         timeValue.value = "";
@@ -112,16 +114,31 @@ addButton.addEventListener("click", function addNew() {
     let timeValue = document.getElementById("dateTime").value;
     dateaTime = `${dateValue} ${timeValue}`;
     
+
+    if (mainInput.style.visibility == "hidden") {
+        mainInput.style.visibility = "visible";
+    } else {
+        mainInput.style.visibility = "hidden";
+    };
+
+     if (mainInput.style.height == "0px") {
+        mainInput.style.height = "60px";
+    } else {
+        mainInput.style.height = "0px";
+    };
+    
+
     if (inputted && dateValue && timeValue) {
         addToDo(inputted, dateaTime);
         LIST.push({
             serialNuber: id, 
-            // status: selectedOption,
+            status: selectedOption,
             date: dateaTime,
             name: inputted
         });
     };
     setList();
+ 
  });
 
 
@@ -175,21 +192,12 @@ function updateTodo (){
     child.style.display = "none";
     edit.style.display = "block";
     activity.value = "";
-    // thatT = time.value;
     statusP.innerHTML = selectedOption;
     console.log(time.value);
  
     LIST.forEach( (col) =>{
         let selectCol = document.getElementById("selectV");
         let selectedOption = selectCol.value;
-
-        // if (selectedOption == "Completed") {
-        //     // rows.setAttribute("id", "completed");
-        //     console.log(rows);
-        // } else {
-
-        //     rows.setAttribute("id", "");
-        // }
     });
 };
 
@@ -198,4 +206,3 @@ function clearAll() {
     location.reload();
     id = 1;
 };
-

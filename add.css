@@ -94,6 +94,9 @@ h2.side-header {
 .page-content {
     width: 100%;
     position: absolute;
+    background-image: url('images/abstract-geometric-shape-connection-with-3d-cubes-background_42705-105.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -174,16 +177,26 @@ a.side-lnk {
 
 li.toggle-navi {
     height: 30px;
+    position: relative;
+    cursor: pointer;
+
 }
 
 .blue-top {
-    background-color: rgb(62, 62, 175);
+    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.938), rgb(70, 64, 64)); */
+    background-color: rgb(0, 0, 0);
+    opacity: .8;
     width: 100%;
     height: 25px;
     margin: 0;
     padding: 0px;
 }
 
+form.quick-form {
+    margin-left: 20%;
+    height: 20px;
+    width: 720px;
+}
 
 .quick-search {
     height: 20px;
@@ -221,7 +234,9 @@ ul.end-links li {
 }
 
 .secondary-nav {
-    background-image: linear-gradient(to right,rgb(155, 85, 85), rgb(89, 89, 161));
+    background-color: rgba(45, 45, 185, 0.712);
+    opacity: .9;
+    background-image: linear-gradient(to right,rgba(85, 79, 79, 0.74), rgb(37, 37, 148)); */
 }
 
 .secondary-nav h3 {
@@ -232,10 +247,16 @@ ul.end-links li {
 .Todo-sec {
     margin-top: 5px;
     margin-left: 10%;
+    box-shadow: 1px;
 }
 
+
 #dateTime {
-    width: 80px;
+    width: 18%;
+}
+
+img.to-img {
+    height: 50px;
 }
 
 img.Todo-img {
@@ -244,10 +265,18 @@ img.Todo-img {
     margin: 0%;
 }
 
+.top-bar h3 {
+    margin-left: 18%;
+}
+
 .mylist {
     padding: 0%;
     margin: 0%;
+    position: relative;
+    left: 15%;
     border: 1px solid;
+    box-shadow: 3px 4px 1px 2px rgba(0, 0, 0, 0.815);
+    max-width: 700px;
 }
 
 
@@ -255,6 +284,7 @@ img.Todo-img {
     background-color: rgba(0, 0, 0, 0.61);
     padding: 5px;
     margin-top: 40%;
+    position: relative;
 }
 
 marquee {
@@ -270,59 +300,106 @@ marquee {
 }
 
 .header {
-    background-image: url("Images/downlooad.jpg");
+    background-image: url("Images/checklist4.jpg");
     background-size: 100%;
     height: 100%;
     background-repeat: no-repeat;
 }
 
 .header h4 {
-    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: rgba(15, 14, 14, 0.822);
     font-weight: 900;
+    font-family: cursive;
 } 
 
 p#date {
-    color: white;
+    color: rgba(15, 14, 14, 0.822);
+    font-weight: 900;
+    font-family: cursive;
     margin-top: 220px;
     font-size: 20px;
 }
 
-
 form.main-form {
     margin-top: 10%;
     padding: 2px 2px;
-    background-color: rgba(0, 0, 0, 0.26);
+    background-color: rgba(0, 0, 0, 0.384);
+    
 }
 
 
 .update-btn {
     display: none;
+    position: relative;
 } 
 
+table#dataTable {
+    text-align: center;
+    width: 100%;
+    border-bottom: 3px solid rgb(11, 11, 102);
+    border-style: groove;
+    border-radius: 1%;
+}
+
+
+th.cols-head {
+    font-weight: lighter;
+    border-right: 1px solid white;
+    border-bottom: 1px solid red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.table td, .table th {
+     padding: 0rem; 
+     vertical-align: middle; 
+     border-top: 1px solid #dee2e6;
+}
+
 .cols {
-    border: 1px solid;
-
-    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(243, 233, 233, 0.849);
+    color: rgba(10, 10, 10, 0.699);
+    border-bottom: 1px solid white;
+    border-top: 2px solid white;
+    transition: all .5s ease;
+    font-weight: lighter;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    opacity: .9;
+    height:50px;
 }
 
-.colserial {
-    margin-top: 2px;
-    border: 1px solid;
+.table-col {
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
+tr {
+    transition: all .5s ease;
+    height: 10%;
+    border-bottom: white;
+}
 
+.columnL{
+    border-right: 2px solid rgb(228, 18, 18);
+}
 
 .status-control {
-    width: 20%;
     padding: 0px;
     display: inline;
 }
 
 button.addIt-btn {
-    width: 5%;
-    border-radius: 90px;
-    background-color: rgb(190, 65, 65);
-    box-shadow:  1px -2px 1px 0px rgba(0, 0, 0, 0.37);
+    margin-left:  47%;
+    position: relative;
+    height: 40px;
+    width: 9%;
+    border-radius: 50%;
+    opacity: .9;
+    background-color: rgba(39, 39, 145, 0.712);
+    /* background-image: linear-gradient(rgba(5, 5, 61, 0.712), rgb(8, 8, 31)); */
+    box-shadow:  1px -2px 1px 0px rgba(0, 0, 0, 0.459);
 }
 
 button.addIt-btn:hover {
@@ -344,28 +421,25 @@ input {
     width: 25%;
 }
 
-#statusT {
-    margin-left: 1px;
-    margin-top: 10px;
-}
-
 .delete-btn {
     width: 30px;
-    margin-left: 10px;
     border-radius: 5px;
-    background-color: red;
+    background-color: rgba(204, 40, 40, 0.863);
     color: white;
 }
 
 .update-btn {
-    background-color: green;
+    background-color: rgb(38, 104, 47);
+    position: relative;
+    left: 15%;
 }
 
 #edit-btn {
     width: 30px;
-    margin-left: 1%;
     border-radius: 5px;
-    background-color: green;
+    background-color: rgb(38, 104, 47);
+    position: relative;
+    left: 10%;
 }
 
 #completed {
@@ -373,66 +447,65 @@ input {
 }
 
 
-table#dataTable {
-    background-color: rgba(131, 126, 126, 0.082);
-    width: 100%;
-    border-left: 1px solid black;
-    border-collapse: unset;
-    border-style: groove;
-}
-
-
-
 .table-header {
     width: 100%;
-    background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));
+    background-image: linear-gradient(to right, rgba(5, 5, 61, 0.322), rgba(29, 29, 73, 0.062));
 }
 
-td.cols-head {
-    padding-right: 3.5px;
-    border-right: 1px solid black;
-}
-
-
-#row {
-    margin-bottom: 10px white;
-}
 
 .Todo-sec {
     height: 700px;
 }
 
 .clr-btn {
-        margin-left: 92%;
-        background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));    
+        position: relative;
+        left: 91%;
+        font-weight: bolder;
         cursor: pointer;
-        font-size: 15px;
+        font-size: 150%;
         text-align: center;
-        height: 34px;
-        width: 40px;
+        height: 30px;
+        width: 50px;
         border-radius: 50px;
         margin-bottom: 1px;
 }
 
 .clr-btn:hover {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
-.clr-col {
-    background-color: rgba(126, 124, 134, 0.712);
-    margin-left: 15px;
-    margin-right: 15px;
-}
 
 form {
     background-color: rgba(0, 0, 0, 0.26);
 }
 
-tr {
-    border-left: 2px solid green;
-    /* background-color: chartreuse; */
+.cols-head {
+    border: 0px;
 }
 
+
+div#main-input {
+    margin-left: 5%;
+    transition: all .6s ease-in;
+    padding-top: 1%;
+}
+
+.input-style {
+    height: 25px;
+    width: 25%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: transparent;
+}
+
+#Activity-name {
+    border: 0px;
+    border-bottom: 1px solid black;
+}
+
+.text-row {
+    transition: all .5s ease;
+}
 
 @media screen and (max-width: 780px){
     #sidebar {
@@ -442,44 +515,35 @@ tr {
         background-color: rgba(0, 0, 0, 0.39);
     }
 
+    .table-col {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .mylist {
+        padding: 0%;
+        margin: 0%;
+        position: relative;
+        left: 5%;
+        border: 1px solid;
+        box-shadow: 3px 4px 1px 2px rgba(0, 0, 0, 0.815);
+        max-width: 700px;
+    }
+
     .header {
-        background-image: url("Images/downlooad.jpg");
+        background-image: url("Images/checklist4.jpg");
         background-size: 900px;
         height: 100%;
         background-repeat: no-repeat;
     }
 
-    .clr-btn {
-        margin-left: 92%;
-        background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));    
-        cursor: pointer;
-        font-size: 15px;
-        text-align: center;
-        height: 34px;
-        width: 40px;
-        border-radius: 50px;
-        margin-bottom: 1px;
-    }
-
-    input {
-        margin: 0;
-        width: 23%;
-        border-style: ridge;
-    }
-    
-    button.addIt-btn {
-        width: 5%;
-        border-radius: 30px;
-   }
-
     #close {
         display: none;
-        position: relative;
+        /* position: relative; */
         left: 300px;
     }
 
     .blue-top {
-        background-color: rgb(62, 62, 175);
         height: 25px;
     }
     
@@ -496,7 +560,6 @@ tr {
     }
 
     .secondary-nav h3 {
-        margin-left: 50px;
         font-weight: 600;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-align: center;
@@ -520,9 +583,6 @@ tr {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     
-     #selectV {
-        width: 20%;
-    }
 
     .sixth-sec img {
         height: 300px;
@@ -550,6 +610,10 @@ tr {
         
     }
 
+    .top-bar h3 {
+        margin-left: 10%;
+    }
+
 }
 
 @media screen and (max-width: 590px){
@@ -558,16 +622,6 @@ tr {
         display: inline-block;
     }
     
-    #selectV {
-     width: 20%;
-     height: 24px;
-    }
-
-    input {
-        margin: 0;
-        width: 24%;
-        height: 24px;
-    }
 
     .clr-btn {
             margin-left: 90%;

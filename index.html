@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="add.css">
-    <link rel="icon" type="Image/jpg" href="Images/OIP.jpg">
-    <title> To Do List </title>
-  </head>
-  <body>
-    <div class="wrapper" id="wrapper">
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="add.css">
+      <link rel="icon" type="image/jpg" href="images/OIP.jpg">
+      <title> To Do List </title>
+    </head>
+    <body>
+     <div class="wrapper" id="wrapper">
             <!--  side-bar -->
                     <div id="sidebar"> 
                            <h2 class="side-header"> My To Do List </h2>
                             <div class="img-body">
-                               <img src="Images/avatar.png" class="side-img">
+                               <img src="images/avatar.png" class="side-img">
                             </div>
                          
                            <nav>
@@ -56,11 +56,12 @@
                               </ul>
                             </nav>
                       </div> 
+            
             <!-- Page Content -->
                 <div class="the-page">
                       <div class="row blue-top">
                         <div class="col-md-1 col-sm-1 img-container">
-                            <img src="Images/logo.png" height="20px">
+                            <img src="images/logo.png" height="20px">
                             <li class="hide-user">
                               <a href="#"><i class="fa fa-user"></i></a>
                                 <ul class="hidden-links">
@@ -121,7 +122,7 @@
                           </div>
 
                           <div class="row">
-                            <div class="col Todo-sec">
+                            <div class="col-md-12 Todo-sec">
                               <div class="container mylist">
                                 <div class="header">
                                   <h4> My To Do </h4>
@@ -134,49 +135,42 @@
                                     </div>
                                   </div>
                                 </div>
-                                 
-
-                                <div class="row clr-row">
-                                  <div class="col clr-col">
-                                    <li class="clr-btn"  onclick="clearAll()"> &#128472; </li>
-                                  </div>
+                               
+                                <div class="col">
+                                  <li class="clr-btn"  onclick="clearAll()"> &#128472; </li>
                                 </div>
-                              
                                
                                <div class="row tables-row">
                                   <div class="col-sm-12 table-col">
-                                    <table class="Data-table" id="dataTable">
-                                    <th>
-                                      <tr class="table-header tables-rows">
-                                        <td class="cols-head"> S/N </td>
-                                        <td class="cols-head"> Date & Time </td>
-                                        <td class="cols-head"> Activities </td>
-                                        <td class="cols-head"> 
-                                          Status
-                                         </td>
-                                        <td class="cols-head">  Edit </td>
-                                        <td class="cols-head"> Delete  </button> </td>
-                                      </tr>
-                                    </th>
+                                    <table class="table table-dark table-hover Data-table" id="dataTable">
+                                        <tr class="table-header tables-rows">
+                                          <th class="cols-head col1" scope="col"> S/N </td>
+                                          <th class="cols-head" scope="col"> Date & Time </td>
+                                          <th class="cols-head" scope="col"> Activities </td>
+                                          <th class="cols-head" scope="col"> 
+                                            Status
+                                          </td>
+                                          <th class="cols-head" scope="col">  Edit </td>
+                                          <th class="cols-head" scope="col"> Delete  </button> </td>
+                                        </tr>
                                     </table>
                                   </div>
                                 </div>
 
                                   <form class="main-form">
-                                    <input type="text" name="Activities" id="Activity-name" placeholder="Activity Name">
-                                    <input type="date" name="Date and Time" id="dateT">
-                                    <input type="time" name="" id="dateTime">
-                                    <select id="selectV">
-                                        <option value="Pending">Pending</option>
-                                        <option value="Completed">Completed</option>
+                                    <div id="main-input" style="visibility: hidden; height: 0px;">
+                                      <input type="text" name="Activities" id="Activity-name" placeholder="Activity Name" class="input-style">
+                                      <input type="date" name="Date and Time" id="dateT" class="input-style">
+                                      <input type="time" name="" id="dateTime" class="input-style">
+                                      <select id="selectV" class="input-style">
+                                          <option value="Pending">Pending</option>
+                                          <option value="Completed">Completed</option>
                                       </select>
+                                    </div>
                                     <button class="addIt-btn" id="add-btns" type="button">
                                       &#43;
                                     </button>
                                   </form>
-                                      
-
-
 
                              </div>
                             </div>
@@ -211,12 +205,11 @@
                             </div>
                             </footer>
                           </div>
-
                         </div>
                </div>
     </div>
  
-    <script src="Js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
 
