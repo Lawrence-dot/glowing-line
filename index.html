@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="add.css">
-      <link rel="icon" type="image/jpg" href="Images/OIP.jpg">
+      <link rel="icon" type="image/jpg" href="images/OIP.jpg">
       <title> To Do List </title>
     </head>
     <body>
@@ -15,7 +15,7 @@
                     <div id="sidebar"> 
                            <h2 class="side-header"> My To Do List </h2>
                             <div class="img-body">
-                               <img src="Images/avatar.png" class="side-img">
+                               <img src="images/images.png" class="side-img">
                             </div>
                          
                            <nav>
@@ -57,12 +57,11 @@
                             </nav>
                       </div> 
             
-          
-		 <!--The  Page Content -->
+            <!-- Page Content -->
                 <div class="the-page">
                       <div class="row blue-top">
                         <div class="col-md-1 col-sm-1 img-container">
-                            <img src="Images/logo.png" height="20px">
+                            <img src="images/images.png" height="20px">
                             <li class="hide-user">
                               <a href="#"><i class="fa fa-user"></i></a>
                                 <ul class="hidden-links">
@@ -102,20 +101,17 @@
                         
                        <div class="page-content" id="main-page"> 
                         <div class="row secondary-nav" >
-                          <div class="col-md-3">
-                            <div id ="side-btn"> 
-                              <div class="toggle-btn">
-                                  <li class="btn toggle-navi" id="open"> .&#9776; </li>
-                              </div>
+                          <div class="col-3">
+                            <div id ="side-btn">          
+                              <li class="btn toggle-navi" id="open"> <a href="a"></a> .&#9776; </li>
                             </div>
-      
-                            <div id="side-btn">
-                              <li class="btn t
-                              oggle-navi" id="close"> &times;. </li>
+
+                            <div class="close-btn">
+                              <li class="btn btn-outline-dark toggle-navi" id="close"> <a href="#">  &times;.</a> </li>
                             </div>
                           </div>
                           
-                            <div class="col-md-9">
+                            <div class="col-9">
                               <div class="top-bar">
                                 <h3> My To Do List</h3>
                               </div>
@@ -124,7 +120,7 @@
 
                           <div class="row">
                             <div class="col-md-12 Todo-sec">
-                              <div class="container mylist">
+                              <div class="container-fluid mylist">
                                 <div class="header">
                                   <h4> My To Do </h4>
                                   <div class="row">
@@ -138,21 +134,21 @@
                                 </div>
                                
                                 <div class="col">
-                                  <li class="clr-btn"  onclick="clearAll()"> &#128472; </li>
+                                  <li class="clr-btn d-block ml-auto"  onclick="clearAll()"> &#128472; </li>
                                 </div>
                                
                                <div class="row tables-row">
                                   <div class="col-sm-12 table-col">
                                     <table class="table table-dark table-hover Data-table" id="dataTable">
                                         <tr class="table-header tables-rows">
-                                          <th class="cols-head col1" scope="col"> S/N </th>
-                                          <th class="cols-head" scope="col"> Date & Time </th>
-                                          <th class="cols-head" scope="col"> Activities </th>
+                                          <th class="cols-head col1" scope="col"> S/N </td>
+                                          <th class="cols-head" scope="col"> Date & Time </td>
+                                          <th class="cols-head" scope="col"> Activities </td>
                                           <th class="cols-head" scope="col"> 
                                             Status
-                                          </th>
-                                          <th class="cols-head" scope="col">  Edit </th>
-                                          <th class="cols-head" scope="col"> Delete  </th>
+                                          </td>
+                                          <th class="cols-head" scope="col">  Edit </td>
+                                          <th class="cols-head" scope="col"> Delete  </button> </td>
                                         </tr>
                                     </table>
                                   </div>
@@ -162,13 +158,13 @@
                                     <div id="main-input" style="visibility: hidden; height: 0px;">
                                       <input type="text" name="Activities" id="Activity-name" placeholder="Activity Name" class="input-style">
                                       <input type="date" name="Date and Time" id="dateT" class="input-style">
-                                      <input type="time" name="" id="dateTime" class="input-style">
+                                      <input type="time" id="dateTime" class="input-style">
                                       <select id="selectV" class="input-style">
                                           <option value="Pending">Pending</option>
                                           <option value="Completed">Completed</option>
                                       </select>
                                     </div>
-                                    <button class="addIt-btn" id="add-btns" type="button">
+                                    <button class="addIt-btn d-block ml-auto mr-auto" id="add-btns" type="button">
                                       &#43;
                                     </button>
                                   </form>
@@ -210,7 +206,7 @@
                </div>
     </div>
  
-    <script src="Js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
 

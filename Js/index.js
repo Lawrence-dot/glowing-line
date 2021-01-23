@@ -12,7 +12,7 @@ open.onclick = function () {
     document.getElementById("open").setAttribute("id", "close");
     close.style.display = "block";
     open.style.display = "none";
-    page.style.paddingLeft = "319px";
+    // page.style.paddingLeft = "319px";
 };
 
 close.onclick = function () {
@@ -21,7 +21,7 @@ close.onclick = function () {
     document.getElementById("close").setAttribute("id", "open");
     close.style.display = "none";
     open.style.display = "block";
-    page.style.paddingLeft = "0px";
+    // page.style.paddingLeft = "0px";
 };
 
 var addButton = document.getElementById("add-btns");
@@ -29,6 +29,7 @@ var date = document.getElementById("date");
 var table = document.getElementsByClassName("Data-table");
 var form = document.getElementsByClassName("main-form");
 var dateT = document.getElementById("dateT");
+var dateTime = document.getElementById("dateTime");
 var time = setInterval(time, 1000);
 var displayDate = new Date();
 var serialN = 1;
@@ -84,9 +85,9 @@ function addToDo (inputted, dateaTime){
 
     let newros = `<tr class="text-rows rows table-rows" id="row">
                             <td class="cols colserial"> ${id}. </td>
-                            <td class="cols column col-date"> ${dateaTime} </td>
+                            <td class="cols column col-date" id="dateTable"> ${dateaTime} </td>
                             <td class="cols column col-activity"> ${inputted} </td>
-                            <td class="cols column col-status"> 
+                            <td class="cols column col-status" id="statusTable"> 
                               ${selectedOption}
                              </td>
                             <td class="cols column col-edit"> <button onclick ="Editactivity()" id="edit-btn"> &#9998; </button>
@@ -102,7 +103,11 @@ function addToDo (inputted, dateaTime){
         id++;
  };
 
- 
+ function status() {
+     
+ };
+
+
 
 addButton.addEventListener("click", function addNew() {
     let activity = document.getElementById("Activity-name");
@@ -139,8 +144,11 @@ addButton.addEventListener("click", function addNew() {
     };
     setList();
  
+    // if (selectedOption == "Pending") {
+    //     thecols.style.color = "green";
+    //     console.log("cols");
+    // }
  });
-
 
 function Deletetodo() {
     let child = event.target;
@@ -171,10 +179,19 @@ function Editactivity() {
     let activity = document.getElementById("Activity-name");
     let updateElement = child.parentNode.children[1];
     let theAct = child.parentNode.parentNode.children[2];
+    let tableDate = document.getElementById("dateTable");
+    dateT.value = tableDate.innerText.substring(0, 10);
+    dateTime.value = tableDate.innerText.substring(11, 16);
+
     child.style.display = "none";
     updateElement.style.display = "block";  
     activity.value = theAct.innerText;
+    addButton.style.visibility = "hidden";
+    addButton.style.height = "0px";
+    mainInput.style.visibility = "visible";
+    mainInput.style.height = "60px";
 };
+
 
 function updateTodo (){
     let child = event.target;
@@ -182,23 +199,27 @@ function updateTodo (){
     let theAct = child.parentNode.parentNode.children[2];
     let edit = child.parentNode.parentNode.children[4].children[0];
     let selectCol = document.getElementById("selectV");
-    let statusP = document.getElementById("statusT");
-    let selectedOption = selectCol.value;
-    let time = document.getElementById("dateT");
-    let theTime = child.parentNode.parentNode.children[1];
-    let rows = document.getElementsByClassName("rows");
-    let thatT =  theTime.innerText.substring(10, 16);
+    let tableStatus = document.getElementById("statusTable");
+    let tableDate = document.getElementById("dateTable");
+    
     theAct.innerText = activity.value;
     child.style.display = "none";
     edit.style.display = "block";
     activity.value = "";
-    statusP.innerHTML = selectedOption;
-    console.log(time.value);
- 
-    LIST.forEach( (col) =>{
-        let selectCol = document.getElementById("selectV");
-        let selectedOption = selectCol.value;
-    });
+    tableStatus.innerHTML = selectCol.value;
+    tableDate.innerHTML = `${dateT.value} ${dateTime.value}`;
+
+
+       for (let i = 0; i < tableStatus.length; i++) {
+           const element = tableStatus[i];
+           console.log(element);
+       };
+
+    mainInput.style.visibility = "hidden";
+    mainInput.style.height = "0px";
+    addButton.style.visibility = "visible";
+    addButton.style.height = "40px";
+    setList();
 };
 
 function clearAll() {
@@ -206,3 +227,7 @@ function clearAll() {
     location.reload();
     id = 1;
 };
+
+
+
+//localStorage.clear();

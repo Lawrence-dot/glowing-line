@@ -47,9 +47,10 @@ img.side-img {
     height: 80px;
     width: 80px;
     margin-bottom: 10px;
-    margin-left: 30%;
     background-color: gray;
     transition: all .5s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .img-body {
@@ -67,8 +68,13 @@ li#open {
 
 #close {
     display: none;
-    position: absolute;
+    position: fixed;
+    width: 3rem;
     left: 300px;
+    height: 4rem;
+    z-index: 999999;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .close {
@@ -81,17 +87,17 @@ h2.side-header {
 }
 
 #sidebar {
-    z-index: 1;
-    position: absolute;
+    z-index: 99999;
+    position: fixed;
     width: 0px;
     height: 100%;
-    background-color: rgba(45, 62, 134, 0.705);
+    background-color: rgba(85, 79, 79, 0.74);
     transition: all .5s ease;
     overflow-y: hidden;
-    opacity: 0.7;
 }
 
 .page-content {
+    z-index: -9999;
     width: 100%;
     position: absolute;
     background-image: url('images/abstract-geometric-shape-connection-with-3d-cubes-background_42705-105.jpg');
@@ -236,6 +242,7 @@ ul.end-links li {
 .secondary-nav {
     background-color: rgba(45, 45, 185, 0.712);
     opacity: .9;
+    margin-right: 0px!important;
     background-image: linear-gradient(to right,rgba(85, 79, 79, 0.74), rgb(37, 37, 148)); */
 }
 
@@ -246,7 +253,6 @@ ul.end-links li {
 
 .Todo-sec {
     margin-top: 5px;
-    margin-left: 10%;
     box-shadow: 1px;
 }
 
@@ -271,12 +277,11 @@ img.Todo-img {
 
 .mylist {
     padding: 0%;
-    margin: 0%;
-    position: relative;
-    left: 15%;
+    display: block;
+    margin: 0 auto;
     border: 1px solid;
     box-shadow: 3px 4px 1px 2px rgba(0, 0, 0, 0.815);
-    max-width: 700px;
+    max-width: 500px;
 }
 
 
@@ -359,7 +364,7 @@ th.cols-head {
 }
 
 .cols {
-    background-color: rgba(243, 233, 233, 0.849);
+    background-color: rgb(211, 228, 211);
     color: rgba(10, 10, 10, 0.699);
     border-bottom: 1px solid white;
     border-top: 2px solid white;
@@ -368,6 +373,10 @@ th.cols-head {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     opacity: .9;
     height:50px;
+}
+
+.col-status {
+    color: rgb(92, 23, 23);
 }
 
 .table-col {
@@ -391,10 +400,8 @@ tr {
 }
 
 button.addIt-btn {
-    margin-left:  47%;
-    position: relative;
     height: 40px;
-    width: 9%;
+    width: 45px;
     border-radius: 50%;
     opacity: .9;
     background-color: rgba(39, 39, 145, 0.712);
@@ -458,16 +465,14 @@ input {
 }
 
 .clr-btn {
-        position: relative;
-        left: 91%;
-        font-weight: bolder;
-        cursor: pointer;
-        font-size: 150%;
-        text-align: center;
-        height: 30px;
-        width: 50px;
-        border-radius: 50px;
-        margin-bottom: 1px;
+    font-weight: bolder;
+    cursor: pointer;
+    font-size: 150%;
+    text-align: right;
+    height: 30px;
+    width: 50px;
+    border-radius: 50px;
+    margin-bottom: 1px;
 }
 
 .clr-btn:hover {
@@ -508,12 +513,6 @@ div#main-input {
 }
 
 @media screen and (max-width: 780px){
-    #sidebar {
-        position: fixed;
-        width: 0px;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.39);
-    }
 
     .table-col {
         padding-left: 4%;
@@ -620,18 +619,5 @@ div#main-input {
     .hide-user {
         margin-left: 90%;
         display: inline-block;
-    }
-    
-
-    .clr-btn {
-            margin-left: 90%;
-            background-image: linear-gradient(to right, rgba(156, 88, 88, 0.938), rgba(29, 29, 151, 0.726));    
-            cursor: pointer;
-            font-size: 15px;
-            text-align: center;
-            height: 34px;
-            width: 40px;
-            border-radius: 50px;
-            margin-bottom: 1px;
     }
 };
