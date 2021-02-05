@@ -156,16 +156,22 @@
 
                                   <form class="main-form">
                                     <div id="main-input" style="visibility: hidden; height: 0px;">
-                                      <input type="text" name="Activities" id="Activity-name" placeholder="Activity Name" class="input-style">
-                                      <input type="date" name="Date and Time" id="dateT" class="input-style">
-                                      <input type="time" id="dateTime" class="input-style">
-                                      <select id="selectV" class="input-style">
-                                          <option value="Pending">Pending</option>
-                                          <option value="Completed">Completed</option>
-                                      </select>
+                                      <div class="row ml-2 ml-2">
+                                        <input type="text" name="Activities" id="Activity-name" placeholder="Activity Name" class="input-style">
+                                        <input type="date" name="Date and Time" id="dateT" class="input-style">
+                                        <input type="time" id="dateTime" class="input-style">
+                                        <select id="selectV" class="input-style">
+                                            <option value="Pending">Pending</option>
+                                            <option value="Completed">Completed</option>
+                                        </select>
+                                        <button class="addIt-btn d-block ml-2" id="add-btns" type="button">
+                                          &#10003;
+                                        </button>
+                                      </div>
                                     </div>
-                                    <button class="addIt-btn d-block ml-auto mr-auto" id="add-btns" type="button">
-                                      &#43;
+
+                                    <button class="d-block ml-auto mr-auto" id="list-toggle" type="button">
+                                      &#9660;
                                     </button>
                                   </form>
 

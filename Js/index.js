@@ -2,6 +2,7 @@ var open = document.getElementById("open");
 var close = document.getElementById("close");
 var sidebar = document.getElementById("sidebar");
 var page = document.getElementById("main-page");
+var listToggle = document.getElementById("list-toggle");
 var menuopen;
 
 
@@ -103,10 +104,22 @@ function addToDo (inputted, dateaTime){
         id++;
  };
 
- function status() {
-     
- };
+ listToggle.onclick = function name() {
+    if (mainInput.style.visibility == "hidden") {
+        mainInput.style.visibility = "visible";
+        listToggle.innerHTML = "&#9650;";
+    } else {
+        mainInput.style.visibility = "hidden";
+        listToggle.innerHTML = "&#9660;";
+    };
 
+     if (mainInput.style.height == "0px") {
+        mainInput.style.height = "60px";
+    } else {
+        mainInput.style.height = "0px";
+    };
+    
+ }
 
 
 addButton.addEventListener("click", function addNew() {
@@ -120,17 +133,6 @@ addButton.addEventListener("click", function addNew() {
     dateaTime = `${dateValue} ${timeValue}`;
     
 
-    if (mainInput.style.visibility == "hidden") {
-        mainInput.style.visibility = "visible";
-    } else {
-        mainInput.style.visibility = "hidden";
-    };
-
-     if (mainInput.style.height == "0px") {
-        mainInput.style.height = "60px";
-    } else {
-        mainInput.style.height = "0px";
-    };
     
 
     if (inputted && dateValue && timeValue) {
@@ -142,12 +144,17 @@ addButton.addEventListener("click", function addNew() {
             name: inputted
         });
     };
+
+    if(!inputted || !dateValue || !timeValue){
+        alert("Please Fill all the boxes");
+    }; 
+
     setList();
  
-    // if (selectedOption == "Pending") {
-    //     thecols.style.color = "green";
-    //     console.log("cols");
-    // }
+    if (selectedOption == "Pending") {
+        thecols.style.color = "green";
+        console.log("cols");
+    }
  });
 
 function Deletetodo() {
@@ -227,7 +234,5 @@ function clearAll() {
     location.reload();
     id = 1;
 };
-
-
 
 //localStorage.clear();
